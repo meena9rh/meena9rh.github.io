@@ -881,4 +881,12 @@ const counterObs = new IntersectionObserver(entries => {
           el.textContent = current + suffix;
         }, 40);
       }
-      counterObs.unobserve(e
+      counterObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+</script>
+
+</body>
+</html>
